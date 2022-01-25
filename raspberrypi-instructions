@@ -1,0 +1,23 @@
+Install Raspberry Pi OS (Lite) using the Raspberry Pi Imager here:
+https://www.raspberrypi.org/downloads.../
+
+On the SD card before first boot:
+  1. Enable SSH:
+    In /boot/ create named "ssh" with no extension (in Windows, create a new text file called ssh.txt and then rename to remove the extension)
+  2. Disable the Raspberry Pi Camera LED (we don't want to scare off the birds!):
+    In /boot/config.txt:
+    Add the following line to the end of the file, then save it.
+    disable_camera_led=1
+  3. Turn on the Wifi:
+     Create a new file called "wpa_supplicant.conf"
+     In this file, you will have to type in the required configuration to connect to the Wi-Fi network.  Just create a new file wpa_supplicant.conf and add the following lines to it. Be sure to make changes where necessary depending on your configuration. Finally, save the file.
+      country=NZ
+      ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+      update_config=1
+
+      network={
+        ssid="WIFI_SSID"
+        scan_ssid=1
+        psk="WIFI_PASSWORD"
+        key_mgmt=WPA-PSK
+      }
