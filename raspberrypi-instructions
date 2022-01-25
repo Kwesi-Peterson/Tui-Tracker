@@ -21,3 +21,20 @@ On the SD card before first boot:
         psk="WIFI_PASSWORD"
         key_mgmt=WPA-PSK
       }
+
+
+On first boot:
+
+  sudo apt update
+  sudo apt upgrade
+
+  sudo rapi-config
+    Enable Camera
+    Enable I2C
+    Add Timezone
+    Change default password
+    Set GPU memory to 16
+    
+  Install packages:
+    sudo apt install git python3-pip 
+    sudo apt install pip3 debugpy picamera azure-eventhub azure-iot-device azure.storage.blob get-mac retrying
