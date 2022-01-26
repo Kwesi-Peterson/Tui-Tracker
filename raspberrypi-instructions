@@ -36,5 +36,43 @@ On first boot:
     Set GPU memory to 16
     
   Install packages:
-    sudo apt install git python3-pip 
-    sudo apt install pip3 debugpy picamera azure-eventhub azure-iot-device azure.storage.blob get-mac retrying
+    sudo apt install git python3-pip
+    sudo apt install libssl1.0.2
+    
+    curl https://packages.microsoft.com/config/debian/bullseye/multiarch/prod.list > ./microsoft-prod.list
+    sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+    
+    curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod-old.list
+    sudo cp ./microsoft-prod-old.list /etc/apt/sources.list.d/
+    
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+    
+    sudo apt update
+    sudo apt install iotedge
+    sudo iotedge check
+    sudo systemctl restart iotedge
+    systemctl status iotedge
+    sudo iotedge check
+
+     
+    sudo pip3 install azure-iot-device
+    
+    sudo vi /etc/docker/daemon.json
+      Add the following lines:
+        {
+          "dns": ["1.1.1.1"]
+        }
+    
+    Add the Azure IOT Device Primary Key
+    sudo vi /etc/iotedge/config.yaml
+    
+    
+    
+    pi@tuitracker1:~ $ sudo iotedge list
+NAME                        STATUS           DESCRIPTION      CONFIG
+SimulatedTemperatureSensor  running          Up 3 minutes     mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0
+edgeAgent                   running          Up 4 minutes     mcr.microsoft.com/azureiotedge-agent:1.1
+edgeHub                     running          Up 3 minutes     mcr.microsoft.com/azureiotedge-hub:1.1
+    
+    ###sudo apt install pip3 debugpy picamera azure-eventhub azure-iot-device azure.storage.blob get-mac retrying
