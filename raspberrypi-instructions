@@ -40,7 +40,7 @@ On first boot:
     sudo apt install git python3-pip
     sudo apt install libssl1.0.2
     
-    curl https://packages.microsoft.com/config/debian/bullseye/multiarch/prod.list > ./microsoft-prod.list
+    curl https://packages.microsoft.com/config/debian/11/prod.list > ./microsoft-prod.list
     sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
     
     curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod-old.list
