@@ -29,11 +29,11 @@ On first boot:
   sudo apt upgrade
 
   sudo rapi-config
-    Enable Camera
+    Enable Legacy Camera
     Enable I2C
     Add Timezone
     Change default password
-    Set GPU memory to 16
+    Set GPU memory to 128
     
   Install packages:
     sudo apt install git python3-pip
