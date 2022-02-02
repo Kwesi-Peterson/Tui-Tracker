@@ -33,6 +33,7 @@ On first boot:
     Enable I2C
     Add Timezone
     Change default password
+    Change hostname
     Set GPU memory to 128
     
   Install packages:
