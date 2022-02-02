@@ -52,23 +52,24 @@ On first boot:
     sudo apt update
     sudo apt install moby-engine
     sudo apt install iotedge
-    sudo iotedge check
-    sudo systemctl restart iotedge
-    systemctl status iotedge
-    sudo iotedge check
-
-     
-    sudo pip3 install azure-iot-device
     
     sudo vi /etc/docker/daemon.json
       Add the following lines:
         {
           "dns": ["1.1.1.1"]
         }
-    
+  
     Add the Azure IOT Device Primary Key
     sudo vi /etc/iotedge/config.yaml
     
+    
+    sudo systemctl restart iotedge
+    systemctl status iotedge
+    sudo iotedge check
+
+     
+   ### sudo pip3 install azure-iot-device
+
     
     
     pi@tuitracker1:~ $ sudo iotedge list
