@@ -28,7 +28,7 @@ On first boot:
   sudo apt update
   sudo apt upgrade
 
-  sudo rapi-config
+  sudo raspi-config
     Enable Legacy Camera
     Enable I2C
     Add Timezone
