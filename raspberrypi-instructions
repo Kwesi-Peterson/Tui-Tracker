@@ -82,6 +82,8 @@ On first boot:
     
     sudo systemctl enable v4l2rtspserver
     
+    bash -c "$(curl -sL https://aka.ms/ava-edge/prep_device)"
+    
     sudo reboot
     
     
