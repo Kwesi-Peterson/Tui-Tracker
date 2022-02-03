@@ -71,6 +71,18 @@ On first boot:
     sudo apt install cmake liblog4cpp5-dev libv4l-dev git
     git clone https://github.com/mpromonet/v4l2rtspserver.git ; cd v4l2rtspserver/ ; cmake . ; make ; sudo make install
     
+    v4l2-ctl --set-ctrl vertical_flip=1
+    v4l2-ctl --set-ctrl horizontal_flip=1
+    
+    sudo vi /lib/systemd/system/v4l2rtspserver.service
+    We need to edit the ExecStart line. After editing the line should look something like this.
+    ExecStart=v4l2rtspserver -W 640 -H 480 -F 15 -P 8554 /dev/video0
+    
+    sudo systemctl enable v4l2rtspserver
+    
+    sudo reboot
+    
+    
     
     pi@tuitracker1:~ $ sudo iotedge list
 NAME                        STATUS           DESCRIPTION      CONFIG
