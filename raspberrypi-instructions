@@ -68,8 +68,8 @@ On first boot:
     sudo iotedge check
 
      
-   ### sudo pip3 install azure-iot-device
-
+    sudo apt install cmake liblog4cpp5-dev libv4l-dev git
+    git clone https://github.com/mpromonet/v4l2rtspserver.git ; cd v4l2rtspserver/ ; cmake . ; make ; sudo make install
     
     
     pi@tuitracker1:~ $ sudo iotedge list
@@ -78,4 +78,4 @@ SimulatedTemperatureSensor  running          Up 3 minutes     mcr.microsoft.com/
 edgeAgent                   running          Up 4 minutes     mcr.microsoft.com/azureiotedge-agent:1.1
 edgeHub                     running          Up 3 minutes     mcr.microsoft.com/azureiotedge-hub:1.1
     
-    ###sudo apt install pip3 debugpy picamera azure-eventhub azure-iot-device azure.storage.blob get-mac retrying
+
