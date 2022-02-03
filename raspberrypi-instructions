@@ -80,6 +80,8 @@ On first boot:
     We need to edit the ExecStart line. After editing the line should look something like this.
     ExecStart=v4l2rtspserver -W 640 -H 480 -F 15 -P 8554 -U tui:password /dev/video0
     
+    sudo modprobe -v bcm2835-v4l2
+    
     sudo systemctl enable v4l2rtspserver
     
     bash -c "$(curl -sL https://aka.ms/ava-edge/prep_device)"
