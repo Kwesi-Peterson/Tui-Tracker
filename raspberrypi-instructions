@@ -71,8 +71,10 @@ On first boot:
     sudo apt install cmake liblog4cpp5-dev libv4l-dev git
     git clone https://github.com/mpromonet/v4l2rtspserver.git ; cd v4l2rtspserver/ ; cmake . ; make ; sudo make install
     
-    v4l2-ctl --set-ctrl vertical_flip=1
-    v4l2-ctl --set-ctrl horizontal_flip=1
+    sudo vi /etc/rc.local
+    Add the following lines before the Exit line to rotate the camera image 180deg 
+      v4l2-ctl --set-ctrl vertical_flip=1
+      v4l2-ctl --set-ctrl horizontal_flip=1
     
     sudo vi /lib/systemd/system/v4l2rtspserver.service
     We need to edit the ExecStart line. After editing the line should look something like this.
