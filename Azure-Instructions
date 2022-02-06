@@ -1,3 +1,9 @@
 Azure Video Analytics Set Up:
 https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/edge/get-started-detect-motion-emit-events-portal
 
+
+
+Custom Vision on the Edge - topology
+https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-docs/edge/record-event-based-live-video
+
+Custom Vision on the Edge - docker container
