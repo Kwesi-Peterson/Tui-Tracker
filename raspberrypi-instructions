@@ -42,7 +42,7 @@ On first boot:
     ###sudo apt install libssl1.0.2
     
     sudo vi /etc/default/zramswap
-      Increase the SIZE to 512
+      Increase the SIZE to 256
     
     sudo vi /etc/sysctl.conf
       Add the following four lines to the bottom of the file:
