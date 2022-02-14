@@ -30,7 +30,6 @@ On first boot:
 
   sudo raspi-config
     Enable Legacy Camera
-    Enable I2C
     Add Timezone
     Change default password
     Change hostname
@@ -43,7 +42,7 @@ On first boot:
     ###sudo apt install libssl1.0.2
     
     sudo vi /etc/default/zramswap
-      Increase the SIZE to 256
+      Increase the SIZE to 512
     
     sudo vi /etc/sysctl.conf
       Add the following four lines to the bottom of the file:
@@ -69,6 +68,14 @@ On first boot:
       Add the following lines:
         {
           "dns": ["1.1.1.1"]
+        }
+        
+        {
+          "log-driver": "json-file",
+          "log-opts": {
+             "max-size": "10m",
+             "max-file": "3"
+          }
         }
   
     Add the Azure IOT Device Primary Key
